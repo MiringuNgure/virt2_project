@@ -1,0 +1,48 @@
+{%extends 'base.html'%}
+
+{%block title%} About {% endblock %}
+
+{% block content %}
+<h1>
+    Airport
+</h1>
+<div class = "container">
+    <div class = "col-md-6">
+        <div>
+            <form action="" enctype="multipart/form-data" method = "post">
+                <select class="form-select" aria-label="Default select example">
+
+                    {% for results in data%}
+        <option name = {{results.name}} id = 'myfield'> {{results.name}}  </option>
+                    {% endfor %}
+                  </select>
+            </form>
+        </div>
+
+        <!--
+        <div class = "showing-info mt-4">
+            <p class = ""> Name: </p> <span>  </span>
+            <p class = ""> Airport Code: </p> <span>  </span>
+            <p class = ""> Temperature: </p> <span>  </span>
+            <p class = ""> Dewpoint: </p> <span>  </span>
+            <p class = ""> Pressure: </p> <span>  </span>
+            <p class = ""> Winds: </p> <span>  </span>
+            <p class = ""> Visibility: </p> <span>  </span>
+            <p class = ""> Ceiling: </p> <span>  </span>
+            <p class = ""> Clouds: </p> <span>  </span>
+        </div>
+        -->
+    </div>
+</div>
+
+<script>
+    $('document').ready(function(){
+        $('#myfield').change(function() {
+            alert('was changed');
+});
+    });
+
+</script>
+
+{% endblock %}
+
